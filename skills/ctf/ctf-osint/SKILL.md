@@ -10,11 +10,11 @@ metadata:
 
 # CTF 开源情报 (OSINT)
 
-## 深入参考
+## ⛔ 深入参考（必读）
 
-- 社交媒体调查（Twitter/Tumblr/BlueSky/Discord/用户名枚举） → 读 [references/social-media.md](references/social-media.md)
-- 地理定位与媒体分析（反向图搜/街景匹配/MGRS/EXIF） → 读 [references/geolocation-and-media.md](references/geolocation-and-media.md)
-- Web 与 DNS 侦察（Dorking/Wayback/Zone Transfer/WHOIS） → 读 [references/web-and-dns.md](references/web-and-dns.md)
+- ⛔**必读** 社交媒体调查（Twitter/Tumblr/BlueSky/Discord/用户名枚举） → `read_skill(id="ctf-osint", path="references/social-media.md")`
+- ⛔**必读** 地理定位与媒体分析（反向图搜/街景匹配/MGRS/EXIF） → `read_skill(id="ctf-osint", path="references/geolocation-and-media.md")`
+- ⛔**必读** Web 与 DNS 侦察（Dorking/Wayback/Zone Transfer/WHOIS） → `read_skill(id="ctf-osint", path="references/web-and-dns.md")`
 
 ---
 

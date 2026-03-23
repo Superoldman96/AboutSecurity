@@ -21,7 +21,7 @@ parameters:
     default: "php,asp,aspx,jsp,html,js"
   - name: wordlist
     type: string
-    description: "字典路径（留空使用默认字典）"
+    description: "字典路径。可使用绝对路径、或相对于 Dic 目录的相对路径（如 Web/Directory/php/Fuzz_php.txt）。留空使用 dirsearch 内置字典。"
 
 command_template: |
   -u {{.target}}

@@ -10,17 +10,17 @@ metadata:
 
 # CTF 密码学攻击
 
-## 深入参考
+## ⛔ 深入参考（必读）
 
-- 古典密码（Vigenere/Atbash/XOR/OTP/同音替换） → 读 [references/classic-ciphers.md](references/classic-ciphers.md)
-- 现代密码攻击（AES/CBC/Padding Oracle/LFSR/MAC伪造） → 读 [references/modern-ciphers.md](references/modern-ciphers.md)
-- RSA 攻击（小指数/Wiener/Pollard/Coppersmith/Hastad/CRT） → 读 [references/rsa-attacks.md](references/rsa-attacks.md)
-- ECC 攻击（小子群/无效曲线/Smart/ECDSA nonce重用） → 读 [references/ecc-attacks.md](references/ecc-attacks.md)
-- 高级数学攻击（格/LWE/同源/Pohlig-Hellman/LLL） → 读 [references/advanced-math.md](references/advanced-math.md)
-- PRNG 攻击（MT19937/LCG/V8 XorShift128+/混沌映射） → 读 [references/prng.md](references/prng.md)
-- ZKP 与约束求解（Z3/图着色/Groth16/Shamir SSS） → 读 [references/zkp-and-advanced.md](references/zkp-and-advanced.md)
-- 历史密码（Lorenz SZ40/42/Book Cipher） → 读 [references/historical.md](references/historical.md)
-- 奇异代数结构（辫群DH/热带半环/FPE/Goldwasser-Micali） → 读 [references/exotic-crypto.md](references/exotic-crypto.md)
+- ⛔**必读** 古典密码（Vigenere/Atbash/XOR/OTP/同音替换） → `read_skill(id="ctf-crypto", path="references/classic-ciphers.md")`
+- ⛔**必读** 现代密码攻击（AES/CBC/Padding Oracle/LFSR/MAC伪造） → `read_skill(id="ctf-crypto", path="references/modern-ciphers.md")`
+- ⛔**必读** RSA 攻击（小指数/Wiener/Pollard/Coppersmith/Hastad/CRT） → `read_skill(id="ctf-crypto", path="references/rsa-attacks.md")`
+- ⛔**必读** ECC 攻击（小子群/无效曲线/Smart/ECDSA nonce重用） → `read_skill(id="ctf-crypto", path="references/ecc-attacks.md")`
+- ⛔**必读** 高级数学攻击（格/LWE/同源/Pohlig-Hellman/LLL） → `read_skill(id="ctf-crypto", path="references/advanced-math.md")`
+- ⛔**必读** PRNG 攻击（MT19937/LCG/V8 XorShift128+/混沌映射） → `read_skill(id="ctf-crypto", path="references/prng.md")`
+- ⛔**必读** ZKP 与约束求解（Z3/图着色/Groth16/Shamir SSS） → `read_skill(id="ctf-crypto", path="references/zkp-and-advanced.md")`
+- ⛔**必读** 历史密码（Lorenz SZ40/42/Book Cipher） → `read_skill(id="ctf-crypto", path="references/historical.md")`
+- ⛔**必读** 奇异代数结构（辫群DH/热带半环/FPE/Goldwasser-Micali） → `read_skill(id="ctf-crypto", path="references/exotic-crypto.md")`
 
 ---
 
@@ -28,7 +28,7 @@ metadata:
 
 ```
 题目涉及加密？
-├─ 古典密码（Caesar/Vigenere/XOR/替换） → references/classic-ciphers.md
+├─ 古典密码（Caesar/Vigenere/XOR/替换） → `read_skill(id="ctf-crypto", path="references/classic-ciphers.md")`
 ├─ 对称加密（AES/DES/RC4/分组密码）
 │  ├─ ECB → 块重排 / 逐字节oracle
 │  ├─ CBC → 比特翻转 / Padding Oracle

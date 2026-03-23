@@ -10,9 +10,9 @@ metadata:
 
 # CTF Flag 搜索策略
 
-## 深入参考
+## ⛔ 深入参考（必读）
 
-- 需要各权限场景（RCE/LFI/SQLi/管理后台）的完整搜索路径和命令 → 读 [references/flag-search-paths.md](references/flag-search-paths.md)
+- ⛔**必读** 需要各权限场景（RCE/LFI/SQLi/管理后台）的完整搜索路径和命令 → `read_skill(id="ctf-flag-hunting", path="references/flag-search-paths.md")`
 
 ---
 
@@ -24,7 +24,7 @@ metadata:
 ├─ 文件读取（LFI）→ /flag.txt > config > /proc/self/environ > LFI转RCE
 ├─ 数据库访问（SQLi）→ SHOW TABLES > flag/secret表 > LOAD_FILE
 └─ Web 管理后台 → 翻页面 > 系统信息 > 用户notes > 文件管理
-详细搜索路径 → 读 references/flag-search-paths.md
+详细搜索路径 → `read_skill(id="ctf-flag-hunting", path="references/flag-search-paths.md")`
 ```
 
 ## RCE 快速搜索（最常用）

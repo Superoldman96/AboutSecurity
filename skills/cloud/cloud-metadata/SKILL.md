@@ -12,9 +12,9 @@ metadata:
 
 IMDS 是从 SSRF/RCE 到云控制面的桥梁——一个 HTTP 请求就能获取 IAM 临时凭据。
 
-## 深入参考
+## ⛔ 深入参考（必读）
 
-- 需要各云平台凭据提取详细命令、AWS 快速利用、元数据信息路径 → 读 [references/credential-extraction.md](references/credential-extraction.md)
+- ⛔**必读** 需要各云平台凭据提取详细命令、AWS 快速利用、元数据信息路径 → `read_skill(id="cloud-metadata", path="references/credential-extraction.md")`
 
 ---
 
@@ -63,7 +63,7 @@ http://100.100.100.200/latest/meta-data/
 ├─ Azure → Bearer Token → 枚举资源
 ├─ GCP → OAuth Token → 枚举项目资源
 └─ 阿里云 → STS Token → 枚举 OSS/ECS
-详细命令 → 读 references/credential-extraction.md
+详细命令 → `read_skill(id="cloud-metadata", path="references/credential-extraction.md")`
 ```
 
 获取云凭据后，参考 `cloud-iam-audit` 技能进行提权评估。

@@ -12,9 +12,9 @@ metadata:
 
 内网侦察和外网侦察的区别：内网通常没有 CDN/WAF 保护，但你的操作空间受限于当前立足点的网络位置。核心目标是**快速绘制内网地图**——有哪些主机、什么服务、哪些是高价值目标。
 
-## 深入参考
+## ⛔ 深入参考（必读）
 
-- 存活探测命令、端口→服务→价值映射表、域控/数据库定位 → 读 [references/network-mapping.md](references/network-mapping.md)
+- ⛔**必读** 存活探测命令、端口→服务→价值映射表、域控/数据库定位 → `read_skill(id="internal-recon", path="references/network-mapping.md")`
 
 ## Phase 1: 当前位置分析
 
@@ -41,7 +41,7 @@ nmap -sT -p 22,80,135,139,443,445,1433,3306,3389,5432,5985,6379,8080,9200 TARGET
 
 **高价值端口**：88(域控) | 445(SMB) | 3389(RDP) | 1433(MSSQL) | 6379(Redis)
 
-→ 完整端口→服务→价值映射表 → 读 references/network-mapping.md
+→ 完整端口→服务→价值映射表 → `read_skill(id="internal-recon", path="references/network-mapping.md")`
 
 ## Phase 4: 关键基础设施定位
 

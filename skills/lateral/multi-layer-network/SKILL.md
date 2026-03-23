@@ -10,9 +10,9 @@ metadata:
 
 # 多层网络渗透方法论
 
-## 深入参考
+## ⛔ 深入参考（必读）
 
-- 需要 frp/chisel/Neo-reGeorg/SSH 隧道配置命令、多跳代理链、proxychains 用法 → 读 [references/tunnel-tools.md](references/tunnel-tools.md)
+- ⛔**必读** 需要 frp/chisel/Neo-reGeorg/SSH 隧道配置命令、多跳代理链、proxychains 用法 → `read_skill(id="multi-layer-network", path="references/tunnel-tools.md")`
 
 ---
 
@@ -46,7 +46,7 @@ fscan -h 10.0.0.0/24 -nopoc
 └─ 完全不出网 → SSH 反向隧道 / 在跳板上中转
 ```
 
-所有工具的详细配置命令见 → [references/tunnel-tools.md](references/tunnel-tools.md)
+所有工具的详细配置命令见 → `read_skill(id="multi-layer-network", path="references/tunnel-tools.md")`
 
 ## 隧道工具选择速查
 

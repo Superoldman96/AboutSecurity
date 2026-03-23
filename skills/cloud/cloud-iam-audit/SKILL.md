@@ -12,9 +12,9 @@ metadata:
 
 IAM 权限就是攻击面——一个过度授权的策略比一个 RCE 漏洞更危险。
 
-## 深入参考
+## ⛔ 深入参考（必读）
 
-- 需要 AWS 5 条提权路径详细命令、高价值数据搜索、CloudTrail 隐蔽性 → 读 [references/aws-escalation.md](references/aws-escalation.md)
+- ⛔**必读** 需要 AWS 5 条提权路径详细命令、高价值数据搜索、CloudTrail 隐蔽性 → `read_skill(id="cloud-iam-audit", path="references/aws-escalation.md")`
 
 ---
 
@@ -65,7 +65,7 @@ aws lambda list-functions 2>&1
 ├─ 有 PassRole + Lambda/EC2 → 间接提权（创建服务挂高权限 Role）
 ├─ 有 AssumeRole → 角色链跳转
 ├─ 只有数据读取 → 找更多凭据（S3/Secrets/Lambda 代码/User-Data）
-└─ 详细命令 → 读 references/aws-escalation.md
+└─ 详细命令 → `read_skill(id="cloud-iam-audit", path="references/aws-escalation.md")`
 ```
 
 ## 注意事项

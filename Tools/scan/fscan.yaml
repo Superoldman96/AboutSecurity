@@ -4,7 +4,7 @@ description: "使用 fscan 进行内网综合扫描，集成主机存活探测�
 homepage: "https://github.com/shadow1ng/fscan"
 category: scan
 binary: fscan
-version_cmd: "fscan -h 127.0.0.1 2>&1 | head -1"
+version_cmd: "fscan >&1 | head -1"
 
 install:
   manual: "https://github.com/shadow1ng/fscan/releases"

@@ -45,3 +45,4 @@
 
 - https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md
 - https://github.com/ljagiello/ctf-skills
+- https://github.com/JDArmy/Evasion-SubAgents

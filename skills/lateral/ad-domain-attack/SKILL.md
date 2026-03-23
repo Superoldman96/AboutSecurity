@@ -12,10 +12,10 @@ metadata:
 
 拿下域控 = 控制整个网络。
 
-## 深入参考
+## ⛔ 深入参考（必读）
 
-- 需要密码喷洒、AS-REP Roasting、Kerberoasting 详细命令 → 读 [references/credential-attacks.md](references/credential-attacks.md)
-- 需要委派攻击(RBCD)、ACL 滥用、DCSync、持久化 → 读 [references/domain-escalation.md](references/domain-escalation.md)
+- ⛔**必读** 需要密码喷洒、AS-REP Roasting、Kerberoasting 详细命令 → `read_skill(id="ad-domain-attack", path="references/credential-attacks.md")`
+- ⛔**必读** 需要委派攻击(RBCD)、ACL 滥用、DCSync、持久化 → `read_skill(id="ad-domain-attack", path="references/domain-escalation.md")`
 
 ---
 
@@ -48,13 +48,13 @@ BloodHound 能自动发现攻击路径，是域渗透最强大的工具。
 
 ```
 拥有的凭据？
-├─ 无凭据 → AS-REP Roasting（无需预认证的用户）→ 读 references/credential-attacks.md
-├─ 任意域用户 → Kerberoasting（SPN 服务账户）→ 读 references/credential-attacks.md
-│             → 密码喷洒（先查锁定策略！）→ 读 references/credential-attacks.md
+├─ 无凭据 → AS-REP Roasting（无需预认证的用户）→ `read_skill(id="ad-domain-attack", path="references/credential-attacks.md")`
+├─ 任意域用户 → Kerberoasting（SPN 服务账户）→ `read_skill(id="ad-domain-attack", path="references/credential-attacks.md")`
+│             → 密码喷洒（先查锁定策略！）→ `read_skill(id="ad-domain-attack", path="references/credential-attacks.md")`
 │             → BloodHound 找攻击路径
 ├─ 本地管理员 → SAM dump → PTH 横向 → 凭据复用
-├─ 域管权限 → DCSync 提取所有哈希 → 读 references/domain-escalation.md
-└─ 发现委派/ACL 路径 → 委派攻击/ACL 滥用 → 读 references/domain-escalation.md
+├─ 域管权限 → DCSync 提取所有哈希 → `read_skill(id="ad-domain-attack", path="references/domain-escalation.md")`
+└─ 发现委派/ACL 路径 → 委派攻击/ACL 滥用 → `read_skill(id="ad-domain-attack", path="references/domain-escalation.md")`
 ```
 
 ### 凭据复用速查
