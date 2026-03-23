@@ -40,3 +40,8 @@
     * **Cheatsheet** : 渗透测试信息收集表,渗透测试时直接复制一副作为参考、信息记录、方便团队协作、出报告等。
     * **出报告专用** : 记录部分平常渗透测试遇到的案例。
     * **行业名词**
+
+## 参考
+
+- https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md
+- https://github.com/ljagiello/ctf-skills
