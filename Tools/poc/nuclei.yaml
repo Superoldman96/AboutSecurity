@@ -34,6 +34,7 @@ command_template: |
   -severity {{.severity}}
   {{if .tags}}-tags {{.tags}}{{end}}
   {{if .templates}}-t {{.templates}}{{end}}
+  {{if not .templates}}{{if not .tags}}-as{{end}}{{end}}
   -jsonl
   -o {{.OutputFile}}
   -silent

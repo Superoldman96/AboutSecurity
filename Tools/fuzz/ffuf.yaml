@@ -95,6 +95,6 @@ findings_mapping:
   detail_template: "[{{.status}}] {{.url}} (size:{{.length}}, words:{{.words}})"
 
 constraints:
-  timeout: 600s
+  timeout: 300s
   proxy_flag: "-x"
   max_concurrent: 2
