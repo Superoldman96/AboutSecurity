@@ -12,6 +12,11 @@
         "filescan|文件扫描|搜索文件对象",
         "dumpfiles|提取文件|导出|physaddr",
         "cmdline|memdump|strings|辅助分析"
+      ],
+      "required_terms": [
+        "Volatility",
+        "vol3",
+        "volatility3"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "POST|multipart|上传|http.request.method",
         "tcp.stream|Follow TCP Stream|跟踪流",
         "strings|grep flag|binwalk|后续分析"
+      ],
+      "required_terms": [
+        "http,/tmp",
+        "http.request.method",
+        "tcp.stream"
       ]
     },
     {
@@ -38,6 +48,11 @@
         "stegsolve|位平面|逐通道|RGB分析",
         "exiftool|元数据|metadata|PNG结构",
         "strings|EOF后数据|IEND之后|额外数据"
+      ],
+      "required_terms": [
+        "LSB",
+        "EOF后数据",
+        "binwalk"
       ]
     },
     {
@@ -51,6 +66,11 @@
         "photorec|scalpel|文件恢复|数据雕刻",
         "已删除|deleted|inode|恢复",
         "strings|grep|直接搜索|flag关键词"
+      ],
+      "required_terms": [
+        "mount",
+        "loop",
+        "fls"
       ]
     },
     {
@@ -64,6 +84,11 @@
         "evtx|evtx_dump|python-evtx|解析工具",
         "事件ID|Event ID|安全日志|Security",
         "时间戳|TimeCreated|时间|SystemTime"
+      ],
+      "required_terms": [
+        "TimeCreated",
+        "SystemTime",
+        "evtx"
       ]
     }
   ]

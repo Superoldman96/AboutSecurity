@@ -12,6 +12,11 @@
         "CreateThread|创建线程|执行shellcode",
         "编译通过|gcc|cl|交叉编译",
         "场景库|记录|去重|避免重复"
+      ],
+      "required_terms": [
+        "PAGE_EXECUTE_READWRITE",
+        "VirtualAlloc",
+        "CreateThread"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "Rust|FFI|extern|unsafe|跨语言调用",
         "交叉编译|target|x86_64-pc-windows|编译通过",
         "错误处理|Result|Option|Rust错误处理"
+      ],
+      "required_terms": [
+        "x86_64-pc-windows",
+        "NtAllocateVirtualMemory",
+        "ConvertThreadToFiber"
       ]
     }
   ]

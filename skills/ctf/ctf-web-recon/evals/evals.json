@@ -12,6 +12,11 @@
         "SSTI|EJS|模板注入|服务端模板",
         "NoSQL|MongoDB|注入|$gt|$ne",
         "技术栈|Cookie指纹|框架识别"
+      ],
+      "required_terms": [
+        "Node.js",
+        "connect.sid",
+        "SSTI"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "index.php.bak|.bak|备份后缀",
         "www.zip|www.tar.gz|整站打包备份",
         ".DS_Store|目录文件泄露|macOS"
+      ],
+      "required_terms": [
+        ".index.php.swp",
+        ".swp",
+        "index.php~"
       ]
     },
     {
@@ -38,6 +48,11 @@
         "2-3轮|不超过3轮|快速完成侦察",
         "线索在功能点|不在侦察里|过度侦察浪费",
         "不做子域名|不做大规模端口|CTF单应用"
+      ],
+      "required_terms": [
+        "robots.txt",
+        ".git/HEAD",
+        ".env"
       ]
     }
   ]

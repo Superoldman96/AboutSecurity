@@ -12,6 +12,11 @@
         "两步|先写后执行|分离读写和执行",
         "编译通过|功能正常|验证执行",
         "变更报告|diff|修改说明"
+      ],
+      "required_terms": [
+        "PAGE_READWRITE",
+        "PAGE_EXECUTE_READ",
+        "VirtualProtect"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "替换调用|函数指针|typedef|间接调用",
         "编译通过|功能正常|验证",
         "IAT|导入表|不出现明文API名"
+      ],
+      "required_terms": [
+        "CRC32",
+        "PEB",
+        "LDR"
       ]
     }
   ]

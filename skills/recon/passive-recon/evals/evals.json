@@ -12,6 +12,11 @@
         "domain:\"target.com\"|Quake|冒号语法",
         "AND|Quake用AND|布尔运算符",
         "三个引擎|语法不同|分别查询"
+      ],
+      "required_terms": [
+        "app=",
+        "FOFA",
+        "AND"
       ]
     },
     {
@@ -38,6 +43,11 @@
         "不能扫描|不能直接访问|不能端口扫描",
         "零接触|被动|不留痕迹|无日志",
         "WHOIS|DNS历史|GitHub搜索|公开来源"
+      ],
+      "required_terms": [
+        "FOFA",
+        "WHOIS",
+        "DNS历史"
       ]
     }
   ]

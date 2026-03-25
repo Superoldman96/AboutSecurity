@@ -12,6 +12,11 @@
         "Python脚本|自动提取|不要手动拼接|程序化",
         "UNION SELECT|替代方案|无截断|一次拿完整",
         "LLM不可靠|数hex字符|自动化验证"
+      ],
+      "required_terms": [
+        "UNION SELECT",
+        "Python脚本",
+        "数hex字符"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "&lt;变成<|&amp;变成&|解码还原",
         "网页显示|渲染后不同|源码vs显示",
         "FLAG{a3b<c5d&e7f}|解码后正确flag"
+      ],
+      "required_terms": [
+        "FLAG{a3b<c5d&e7f}",
+        "html.unescape",
+        "HTML实体"
       ]
     },
     {
@@ -38,6 +48,11 @@
         "php://filter|base64-encode|LFI编码读取",
         "正则验证|FLAG{|格式检查|完整性",
         "Python|程序化|不要手动解码|自动化"
+      ],
+      "required_terms": [
+        "FLAG{",
+        "strip()",
+        "php://filter"
       ]
     }
   ]

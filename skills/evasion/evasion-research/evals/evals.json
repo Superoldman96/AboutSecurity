@@ -11,6 +11,11 @@
         "分析代码|模式识别|API调用|技术分类",
         "去重|已有技术|避免重复入库",
         "入库|记录|技术名称|分类标签"
+      ],
+      "required_terms": [
+        "GitHub搜索",
+        "gh search",
+        "shellcode loader"
       ]
     }
   ]

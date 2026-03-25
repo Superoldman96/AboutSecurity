@@ -12,6 +12,11 @@
         "389|LDAP|目录服务|636",
         "3268|Global Catalog|全局编录",
         "极高|最高价值|控制域|关键目标"
+      ],
+      "required_terms": [
+        "LDAP",
+        "Kerberos",
+        "Global Catalog"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "被动|不触发|IDS|避免检测",
         "tcpdump|抓包|监听|嗅探",
         "DNS|zone transfer|区域传输"
+      ],
+      "required_terms": [
+        "ARP",
+        "NBNS",
+        "LLMNR"
       ]
     },
     {
@@ -38,6 +48,10 @@
         "172.16.0.0/24|新网段|扫描|发现",
         "代理|转发|通过此机器访问",
         "新攻击面|扩大范围|深入内网"
+      ],
+      "required_terms": [
+        "172.16.0.0/24",
+        "pivot"
       ]
     }
   ]

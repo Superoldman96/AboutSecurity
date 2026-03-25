@@ -12,6 +12,11 @@
         "Redis|未授权|无密码|AUTH",
         "Nginx|解析漏洞|配置错误|alias遍历",
         "LFI|SSRF|Flask调试模式|Werkzeug"
+      ],
+      "required_terms": [
+        "SSTI",
+        "LFI",
+        "SSRF"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "33060|MySQL|X Protocol|MySQL X",
         "非标准端口|30000+|隐藏服务|管理端口",
         "高价值|优先攻击|数据库|中间件"
+      ],
+      "required_terms": [
+        "AJP",
+        "MySQL",
+        "Tomcat"
       ]
     },
     {
@@ -38,6 +48,11 @@
         "存活检测|HTTP|第三步|scan_urlive|httpx",
         "指纹识别|技术栈|第四步|scan_finger",
         "POC扫描|漏洞验证|第五步|poc_web|最后"
+      ],
+      "required_terms": [
+        "scan_dns",
+        "scan_port",
+        "scan_urlive"
       ]
     }
   ]

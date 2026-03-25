@@ -12,6 +12,11 @@
         "源码|config.php|app.py|数据库凭据|连接信息",
         "LFI→RCE|日志投毒|session包含|升级权限",
         "/proc/self/cmdline|启动命令|参数中的flag"
+      ],
+      "required_terms": [
+        "config.php",
+        "/proc/self/environ",
+        "/proc/1/environ"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "env|grep FLAG|环境变量中的真flag",
         "数据库|sqlite3|mysql|表中搜索flag",
         "/root|/home|其他目录|全局搜索"
+      ],
+      "required_terms": [
+        "/root",
+        "/home",
+        "假flag"
       ]
     },
     {
@@ -38,6 +48,11 @@
         "LIKE '%flag%'|column_name|模糊搜索列名",
         "所有数据库|SHOW DATABASES|不只当前库",
         "FILE权限|secure_file_priv|受限时只搜数据库"
+      ],
+      "required_terms": [
+        "LOAD_FILE",
+        "/flag.txt",
+        "information_schema"
       ]
     }
   ]

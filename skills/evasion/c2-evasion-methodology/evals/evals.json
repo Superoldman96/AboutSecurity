@@ -12,6 +12,11 @@
         "编译器标志|优先|strip|UPX",
         "字符串混淆|XOR|加密|运行时解密",
         "验证|重新扫描|YARA|确认绕过"
+      ],
+      "required_terms": [
+        "XOR",
+        "YARA",
+        "pattern"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "编译通过|功能正常|不影响运行",
         "自动化|脚本批量替换|非手动",
         "验证|YARA|VirusTotal|检测率"
+      ],
+      "required_terms": [
+        "XOR",
+        "YARA",
+        "VirusTotal"
       ]
     }
   ]

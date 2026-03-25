@@ -12,6 +12,11 @@
         "不同云|不同端点|元数据地址不同",
         "100.100.100.200/latest/meta-data|阿里云IMDS",
         "先确认云平台|再选端点"
+      ],
+      "required_terms": [
+        "100.100.100.200/latest/meta-data",
+        "100.100.100.200",
+        "x-oss"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "自定义Header|X-aws-ec2-metadata-token-ttl-seconds",
         "DNS rebinding|302重定向|绕过思路",
         "SSRF类型限制|只能GET|无法设置Header"
+      ],
+      "required_terms": [
+        "IMDSv2",
+        "DNS rebinding",
+        "Token"
       ]
     },
     {
@@ -38,6 +48,11 @@
         "ASIA开头|临时凭据|需要SessionToken",
         "s3 ls|ec2 describe|iam list|枚举权限",
         "横向移动|更多资源|提权路径"
+      ],
+      "required_terms": [
+        "AWS_ACCESS_KEY_ID",
+        "sts get-caller-identity",
+        "ec2 describe"
       ]
     }
   ]

@@ -12,6 +12,10 @@
         "random12345|任意子域|都能解析|说明泛解析",
         "字典枚举|内容比对|HTTP响应对比|区分真假",
         "1.2.3.4|通配符IP|默认IP|需要排除"
+      ],
+      "required_terms": [
+        "HTTP响应对比",
+        "random12345"
       ]
     },
     {
@@ -25,6 +29,11 @@
         "三种来源|三源联合|多源|交叉",
         "DNS枚举遗漏|DNS不全|补充发现",
         "去重合并|结果合并|交叉验证"
+      ],
+      "required_terms": [
+        "OSINT引擎",
+        "FOFA",
+        "DNS枚举遗漏"
       ]
     },
     {
@@ -38,6 +47,11 @@
         "子域接管|subdomain takeover|接管|dangling CNAME",
         "404|不存在|bucket未声明|可以注册",
         "CNAME|指向|域名解析链"
+      ],
+      "required_terms": [
+        "s3.amazonaws.com",
+        "CDN",
+        "CNAME"
       ]
     }
   ]

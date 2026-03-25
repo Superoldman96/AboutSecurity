@@ -12,6 +12,10 @@
         "0e215962017|0e830400451|MD5碰撞|已知值",
         "===|强比较|应该用强比较|修复方法",
         "password=0|0==0|true|数字0也行"
+      ],
+      "required_terms": [
+        "===",
+        "true"
       ]
     },
     {
@@ -25,6 +29,11 @@
         "NULL===NULL|true|强比较也通过",
         "!=|不等|不同数组|值不同",
         "a[]=|b[]=|GET参数数组语法"
+      ],
+      "required_terms": [
+        "md5(array)",
+        "a[]=1&b[]=2",
+        "NULL"
       ]
     },
     {
@@ -38,6 +47,11 @@
         "parse_str|$$|其他变量覆盖方式",
         "register_globals|历史漏洞|类似原理",
         "危险函数|extract($_GET)|不安全模式"
+      ],
+      "required_terms": [
+        "parse_str",
+        "register_globals",
+        "extract($_GET)"
       ]
     },
     {
@@ -51,6 +65,11 @@
         "config|SECRET_KEY|__class__|信息泄露",
         "__mro__|__subclasses__|RCE链|命令执行",
         "render_template|安全|文件模板|区别"
+      ],
+      "required_terms": [
+        "SECRET_KEY",
+        "render_template_string",
+        "render_template"
       ]
     }
   ]

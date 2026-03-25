@@ -12,6 +12,11 @@
         "64字节|padding|填充|偏移量|offset",
         "rbp|saved rbp|8字节|栈帧",
         "pwntools|p64|flat|payload构造"
+      ],
+      "required_terms": [
+        "buffer overflow",
+        "gets",
+        "ret2win"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "PIE基址|偏移|计算基址|减去偏移",
         "libc|__libc_start_main|libc基址",
         "%n|写入|GOT覆写|任意写|后续利用"
+      ],
+      "required_terms": [
+        "__libc_start_main",
+        "GOT覆写",
+        "format string"
       ]
     },
     {
@@ -38,6 +48,11 @@
         "pop rdi|gadget|ROPgadget|ropper",
         "one_gadget|magic gadget|一键getshell",
         "ret对齐|movaps|栈对齐|16字节对齐"
+      ],
+      "required_terms": [
+        "/bin/sh",
+        "one_gadget",
+        "ROP"
       ]
     },
     {
@@ -51,6 +66,11 @@
         "__free_hook|__malloc_hook|hook覆写",
         "system|/bin/sh|one_gadget|getshell",
         "泄漏libc|unsorted bin|main_arena|libc基址"
+      ],
+      "required_terms": [
+        "__free_hook",
+        "__malloc_hook",
+        "/bin/sh"
       ]
     },
     {
@@ -64,6 +84,11 @@
         "commit_creds|prepare_kernel_cred|提权|root",
         "SMEP|ROP|内核ROP|绕过SMEP",
         "iretq|swapgs|返回用户态|用户空间"
+      ],
+      "required_terms": [
+        "/proc/kallsyms",
+        "commit_creds",
+        "prepare_kernel_cred"
       ]
     }
   ]

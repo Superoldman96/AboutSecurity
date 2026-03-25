@@ -12,6 +12,11 @@
         "子类|subclasses|os._wrap_close|Popen",
         "chr()|字符构造|拼接|绕过关键词过滤",
         "breakpoint()|pdb|交互调试|Python3.7"
+      ],
+      "required_terms": [
+        "__class__",
+        "__bases__",
+        "__subclasses__"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "CyberChef|自动检测|Magic|自动解码",
         "脚本|while循环|自动化|批量解码",
         "明文|flag|停止条件|可读文本"
+      ],
+      "required_terms": [
+        "CyberChef",
+        "base64",
+        "base32"
       ]
     },
     {
@@ -38,6 +48,11 @@
         "printf|echo替代|输出|打印",
         "通配符|glob|*|?|列目录",
         "/bin/cat|绝对路径|/usr/bin|直接指定路径"
+      ],
+      "required_terms": [
+        "/usr/bin",
+        "builtin",
+        "read"
       ]
     },
     {
@@ -51,6 +66,11 @@
         "zbarimg|zxing|QR解码|扫描",
         "方向|旋转|翻转|对齐|校正",
         "纠错|容错|部分损坏|也能解码"
+      ],
+      "required_terms": [
+        "PIL",
+        "finder pattern",
+        "zbarimg"
       ]
     },
     {
@@ -64,6 +84,11 @@
         "约束|constraint|add|方程",
         "ASCII|可打印|32-126|范围限制",
         "s.check()|model()|求解|结果"
+      ],
+      "required_terms": [
+        "s.check()",
+        "model()",
+        "SMT"
       ]
     }
   ]

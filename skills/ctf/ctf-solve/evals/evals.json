@@ -12,6 +12,11 @@
         "逆向|反编译|checksec|分析保护",
         "ctf-pwn|调度|对应skill|专项技术",
         "本地|远程|exploit开发|调试"
+      ],
+      "required_terms": [
+        "ELF",
+        "Pwn",
+        "checksec"
       ]
     },
     {
@@ -25,6 +30,10 @@
         "base64|解码|提取|HTTP内容",
         "ZIP|密码|解密|解压",
         "分步|先取证后解密|流程|顺序"
+      ],
+      "required_terms": [
+        "PCAP",
+        "forensics+crypto"
       ]
     },
     {
@@ -38,6 +47,11 @@
         "robots.txt|.git|备份文件|目录扫描",
         "默认凭据|CVE|已知漏洞|简单路径",
         "备用端口|其他服务|全端口扫描|遗漏"
+      ],
+      "required_terms": [
+        "robots.txt",
+        ".git",
+        "CVE"
       ]
     },
     {
@@ -51,6 +65,11 @@
         "sqlite3 mystery|打开|查询|.tables",
         "SELECT|表|数据|flag查询",
         "hex|xxd|文件识别|手动分析"
+      ],
+      "required_terms": [
+        ".tables",
+        "SQLite",
+        "sqlite3"
       ]
     }
   ]

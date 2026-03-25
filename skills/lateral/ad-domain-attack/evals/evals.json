@@ -12,6 +12,11 @@
         "hashcat -m 13100|hashcat|13100|离线破解",
         "-dc-ip|域控IP|LDAP查询",
         "TGS票据|Kerberos|服务票据"
+      ],
+      "required_terms": [
+        "hashcat -m 13100",
+        "hashcat",
+        "GetUserSPNs"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "Lockout duration|锁定时长|冷却时间",
         "账户锁定|避免锁定|影响可用性",
         "observation window|观察窗口|重置计数"
+      ],
+      "required_terms": [
+        "net accounts /domain",
+        "Lockout duration",
+        "observation window"
       ]
     },
     {
@@ -38,6 +48,11 @@
         "无需上传|不接触目标|远程LDAP",
         "SharpHound|被拦截|杀软|替代",
         "-ns|DNS|域控|LDAP查询"
+      ],
+      "required_terms": [
+        "ACL",
+        "SharpHound",
+        "DNS"
       ]
     }
   ]

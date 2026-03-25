@@ -12,6 +12,11 @@
         "个人简介|bio|帖子|post|内容检查",
         "元数据|图片|EXIF|隐藏信息",
         "历史|Wayback|缓存|已删除内容"
+      ],
+      "required_terms": [
+        "GitHub",
+        "EXIF",
+        "whatsmyname"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "Google Maps|街景|Street View|验证",
         "建筑|地标|landmark|特征建筑",
         "坐标|经纬度|GPS|精确位置"
+      ],
+      "required_terms": [
+        "TinEye",
+        "GPS",
+        "Google Lens"
       ]
     },
     {
@@ -38,6 +48,11 @@
         "zone transfer|axfr|区域传输",
         "子域名|subdomain|枚举|爆破",
         "WHOIS|注册信息|历史记录|反向查询"
+      ],
+      "required_terms": [
+        "TXT",
+        "CNAME",
+        "WHOIS"
       ]
     },
     {
@@ -51,6 +66,11 @@
         "index of|目录列表|directory listing",
         "inurl:|password|config|敏感关键词",
         "robots.txt|sitemap|.git|信息泄露"
+      ],
+      "required_terms": [
+        "robots.txt",
+        ".git",
+        "site:"
       ]
     }
   ]

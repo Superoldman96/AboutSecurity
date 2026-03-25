@@ -12,6 +12,11 @@
         "lambda invoke|执行函数|提权代码",
         "创建策略版本|AttachPolicy|给自己提权",
         "Lambda代码|boto3|iam.attach_user_policy"
+      ],
+      "required_terms": [
+        "iam:PassRole",
+        "AttachPolicy",
+        "lambda create-function"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "SessionToken|AWS_SESSION_TOKEN|必须同时使用",
         "有过期时间|Expiration|临时有效",
         "sts get-caller-identity|验证|确认身份"
+      ],
+      "required_terms": [
+        "AKIA",
+        "ASIA",
+        "STS"
       ]
     },
     {
@@ -38,6 +48,11 @@
         "s3 ls|ec2 describe|iam list-users|常见API",
         "enumerate-iam|Pacu|自动化工具",
         "不同服务|S3|EC2|Lambda|IAM|逐服务测试"
+      ],
+      "required_terms": [
+        "API调用",
+        "IAM",
+        "ec2 describe"
       ]
     }
   ]

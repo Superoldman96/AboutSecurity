@@ -12,6 +12,11 @@
         "strcmp|memcmp|比较|校验函数",
         "strings|字符串|交叉引用|xref",
         "GDB|断点|动态调试|运行时"
+      ],
+      "required_terms": [
+        "IDA",
+        "GDB",
+        "Ghidra"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "patch|NOP|跳过|修改二进制",
         "/proc/self/status|TracerPid|检测调试器",
         "时间检测|rdtsc|clock|time check"
+      ],
+      "required_terms": [
+        "PTRACE_TRACEME",
+        "LD_PRELOAD",
+        "/proc/self/status"
       ]
     },
     {
@@ -38,6 +48,11 @@
         "avoid|失败地址|wrong路径|排除",
         "stdin|posix.dumps(0)|提取输入|求解结果",
         "SimulationManager|simgr|explore|状态管理"
+      ],
+      "required_terms": [
+        "posix.dumps(0)",
+        "SimulationManager",
+        "angr"
       ]
     },
     {
@@ -51,6 +66,11 @@
         "寄存器|register|栈|stack|内存模型",
         "fetch|decode|execute|执行循环",
         "逻辑|校验|加密|flag提取|逆运算"
+      ],
+      "required_terms": [
+        "opcode",
+        "switch-case",
+        "disassembler"
       ]
     },
     {
@@ -64,6 +84,11 @@
         "反编译|decompile|源码级|可读代码",
         "混淆|ConfuserEx|de4dot|反混淆",
         "调试|断点|修改|运行时分析"
+      ],
+      "required_terms": [
+        "dnSpy",
+        "ILSpy",
+        "dotPeek"
       ]
     }
   ]

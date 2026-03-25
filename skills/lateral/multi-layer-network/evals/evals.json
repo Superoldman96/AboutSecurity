@@ -12,6 +12,11 @@
         "socks5|SOCKS代理|1080",
         "bind_port|server_addr|端口配置",
         "反向连接|从DMZ连出|穿越防火墙"
+      ],
+      "required_terms": [
+        "bind_port",
+        "server_addr",
+        "SOCKS代理"
       ]
     },
     {
@@ -25,6 +30,11 @@
         "SOCKS5|TCP封装|协议限制",
         "-sT|全连接|TCP扫描|可用",
         "ICMP|-sS|SYN|也不支持"
+      ],
+      "required_terms": [
+        "UDP不支持",
+        "SOCKS5",
+        "ICMP"
       ]
     },
     {
@@ -38,6 +48,11 @@
         "80|443|HTTP|HTTPS|正常流量",
         "防火墙|只允许HTTP|绕过限制",
         "SOCKS|封装|代理|穿透"
+      ],
+      "required_terms": [
+        "tunnel.php",
+        "Neo-reGeorg",
+        "reGeorg"
       ]
     }
   ]
