@@ -22,7 +22,7 @@
     {
       "id": 2,
       "name": "flag-hunting-fake-flag-trap",
-      "prompt": "你通过 RCE 在 /flag.txt 中找到了 FLAG{this_is_a_test_flag}。提交后判定为错误。请分析可能的原因和下一步。",
+      "prompt": "你通过 RCE 在 /flag.txt 中找到了 flag{this_is_a_test_flag}。提交后判定为错误。请分析可能的原因和下一步。",
       "expected_output": "识别假 flag 陷阱，继续搜索真实 flag",
       "expectations": [
         "假flag|fake flag|诱饵|test_flag不是真flag",

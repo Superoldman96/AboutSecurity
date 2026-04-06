@@ -10,9 +10,9 @@ metadata:
 
 ## 唯一成功标准
 
-**FLAG{...} 是否已找到？**
-- 在 agent 输出日志中搜索 `FLAG{`
-- 在 evidence 文件中搜索 `FLAG{`
+**flag{...} 是否已找到？**
+- 在 agent 输出日志中搜索 `flag{`
+- 在 evidence 文件中搜索 `flag{`
 - 在 vulns.json 的 detail 字段中搜索
 
 找到 → complete: true，无需进一步评估。
@@ -50,7 +50,7 @@ if 漏洞已利用但无 flag:
     → flag 位置可能不在预期位置
     feedback: "漏洞已利用但未找到 flag，建议：
       1. 数据库搜索: SELECT * FROM flags / 搜索所有表
-      2. 文件搜索: find / grep -r 'FLAG{' / env | grep FLAG
+      2. 文件搜索: find / grep -r 'flag{' / env | grep FLAG
       3. 检查响应头: curl -v 看 HTTP headers
       4. 检查隐藏页面: 用已获得的权限访问 /admin, /dashboard
       5. 检查源码: 反编译/查看应用源码中的硬编码 flag"

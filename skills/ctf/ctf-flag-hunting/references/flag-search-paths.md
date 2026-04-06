@@ -17,7 +17,7 @@ cat /opt/flag.txt
 **2. 文件系统搜索**
 ```bash
 find / -name "flag*" 2>/dev/null
-grep -r "FLAG{" / --include="*.txt" --include="*.php" 2>/dev/null
+grep -r "flag{" / --include="*.txt" --include="*.php" 2>/dev/null
 ```
 
 **3. 环境变量**

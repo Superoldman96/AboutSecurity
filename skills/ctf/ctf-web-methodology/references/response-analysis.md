@@ -47,7 +47,7 @@
 
 ## Flag 验证
 
-在报告任何 FLAG{} 之前：
+在报告任何 flag{} 之前：
 ```
 python3 -c "flag='你提取的flag'; print(len(flag)); assert len(flag) >= 64"
 ```

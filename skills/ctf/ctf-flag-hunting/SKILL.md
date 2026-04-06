@@ -56,7 +56,7 @@ ls /tmp
 ```bash
 find / -name "flag*" 2>/dev/null
 find / -name "*.txt" -path "*/flag*" 2>/dev/null
-grep -r "FLAG{" / --include="*.txt" --include="*.php" --include="*.html" 2>/dev/null
+grep -r "flag{" / --include="*.txt" --include="*.php" --include="*.html" 2>/dev/null
 ```
 
 ### 2.4 环境变量和进程
@@ -170,11 +170,11 @@ SELECT LOAD_FILE('/flag.txt');
 
 ## Flag 格式识别
 
-- `FLAG{hex_string}` — 最常见，32/40/64 字符
+- `flag{hex_string}` — 最常见，32/40/64 字符
 - `flag{string}`、`CTF{string}` — 小写或其他前缀
 - 纯字符串（题目会说明）
 
-**假 flag 陷阱**：`FLAG{test}`、`flag{this_is_not_the_flag}` 是迷惑项。
+**假 flag 陷阱**：`flag{test}`、`flag{this_is_not_the_flag}` 是迷惑项。
 
 ---
 
