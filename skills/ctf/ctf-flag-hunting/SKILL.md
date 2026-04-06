@@ -46,6 +46,9 @@ cat /tmp/flag
 cat /tmp/flag.txt
 cat /opt/flag.txt
 cat /app/flag.txt
+
+ls /root
+ls /tmp
 ```
 
 ### 2.3 全盘搜索（路径不确定时）
