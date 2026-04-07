@@ -46,7 +46,10 @@ cat /tmp/flag
 cat /tmp/flag.txt
 cat /opt/flag.txt
 cat /app/flag.txt
+```
 
+也可以看看路径下的文件名
+```bash
 ls /root
 ls /tmp
 ```
