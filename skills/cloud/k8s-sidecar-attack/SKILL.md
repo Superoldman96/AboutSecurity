@@ -24,14 +24,20 @@ Pod 网络命名空间（共享）
 ## Phase 1: 检测 Sidecar
 
 ```bash
-# 检查 Istio sidecar
-env | grep -i istio
-cat /etc/resolv.conf  # 搜索 istio 相关条目
-ip addr                # 多个网卡可能说明有 sidecar
-ps aux 2>/dev/null     # 看到 envoy/pilot-agent 进程
+# 最可靠：看进程列表中有没有 envoy / pilot-agent / linkerd-proxy
+ps aux 2>/dev/null | grep -E 'envoy|pilot-agent|linkerd'
+# 看到 envoy 或 pilot-agent → 确认 Istio sidecar 存在
 
-# 检查网络策略
-# 如果有 istio，API 中可能有 VirtualService / DestinationRule
+# 环境变量（Istio 注入后会设置这些）
+env | grep -i istio
+# ISTIO_META_* 开头的变量 → 确认 Istio
+
+# 网络接口（辅助判断，不能单独确认）
+ip addr
+# 看到 istio0 / lo 以外的多个接口 → 可能有 sidecar，需结合上面确认
+
+# DNS 配置
+cat /etc/resolv.conf  # search 行包含 istio 相关条目
 ```
 
 ---
@@ -83,26 +89,27 @@ tcpdump -A -s 0 'tcp dst port 80' | grep -A 20 'POST'
 ## 无 tcpdump 时的替代方案
 
 ```bash
-# 使用 /proc/net 查看连接
+# 查看当前活跃连接（推断有哪些服务在通信）
 cat /proc/net/tcp
 cat /proc/net/tcp6
-
-# 使用 ss/netstat
 ss -tlnp
 netstat -tlnp 2>/dev/null
 
-# 如果有 Python
-python3 -c "import socket; s=socket.socket(); s.bind(('0.0.0.0',8080)); s.listen(1); c,a=s.accept(); print(c.recv(4096))"
-
-# 如果有 socat
-socat TCP-LISTEN:8080,fork -
+# 如果有 socat，可以做端口转发中间人抓取经过的流量
+socat -v TCP-LISTEN:8080,fork TCP:<target-svc>:80
+# -v 会在 stderr 打印双向流量内容
 ```
 
 ---
 
-## 关键要点
+## 注意事项
 
-- **Sidecar 内部用 HTTP 明文** — Envoy 的 mTLS 在入口终止，转发给应用时已解密
 - 流量可能是**周期性的**（cron job、定时上报），需要持续监听至少 **30-60 秒**
 - 关注 `reporting-service`、`metrics`、`webhook` 等命名的服务请求
-- 发现 Istio 后，配合 `Skill(skill="k8s-istio-bypass")` 进一步利用
+- 如果抓到的全是加密流量，说明 mTLS 没在 sidecar 层终止——换思路，尝试 `Skill(skill="k8s-istio-bypass")` 绕过策略
+
+## 相关技能
+
+- 还没做服务发现？先 `Skill(skill="k8s-network-recon")` 确定有哪些服务
+- 发现 Istio AuthorizationPolicy 阻拦 → `Skill(skill="k8s-istio-bypass")`
+- 发现 NFS/EFS 挂载 → `Skill(skill="k8s-storage-exploit")`

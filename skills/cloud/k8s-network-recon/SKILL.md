@@ -1,8 +1,8 @@
 ---
 name: k8s-network-recon
-description: "Kubernetes 集群内网络侦察与服务发现。当已获得 Pod Shell、需要发现集群内其他服务、执行 K8s 内网扫描时使用。覆盖 DNS PTR 反查、SRV 记录枚举、AXFR 域传输、dnscan/K8Spider 使用。任何在 Pod 中需要横向侦察、寻找隐藏服务、确定攻击目标的场景都应使用此技能，即使用户没有明确提到 DNS"
+description: "Kubernetes 集群内网络侦察与服务发现。当已获得 Pod Shell、需要发现集群内其他服务、执行 K8s 内网扫描时使用。覆盖 DNS PTR 反查、SRV 记录枚举、AXFR 域传输、K8Spider 使用。任何在 Pod 中需要横向侦察、寻找隐藏服务、确定攻击目标的场景都应使用此技能，即使用户没有明确提到 DNS"
 metadata:
-  tags: "k8s,kubernetes,dns,recon,service-discovery,dnscan,k8spider,cluster,内网侦察,服务发现"
+  tags: "k8s,kubernetes,dns,recon,service-discovery,k8spider,cluster,内网侦察,服务发现"
   category: "cloud"
 ---
 
@@ -33,9 +33,9 @@ nslookup -type=srv <service>.<namespace>.svc.cluster.local
 
 ## Phase 1: 确定扫描范围
 
-扫描前需要知道 Service CIDR 的大致范围，否则盲扫效率极低。按可靠度从高到低尝试：
+DNS PTR 反查是逐 IP 的——/16 范围有 65535 个 IP，盲扫可能需要几十分钟。先花 30 秒确定 Service CIDR，能把扫描时间从分钟级降到秒级。
 
-**先获取入口点信息**
+**先获取入口点信息（按可靠度从高到低）**
 ```bash
 # 1. 环境变量（最快，几乎必有）
 echo $KUBERNETES_SERVICE_HOST
@@ -59,24 +59,19 @@ cat /etc/hosts && ip route && arp -a 2>/dev/null
 
 ## Phase 2: DNS 批量扫描
 
-### 根据扫描范围使用 dnscan
+### 使用 K8Spider（推荐）
 
 ```bash
-# 扫描 /24 范围（覆盖大部分 Service IP）
-dnscan -subnet 10.100.0.0/24
+# PTR 反查 + SRV 记录 + 多线程，一条命令完成全部扫描
+k8spider scan -subnet 10.100.0.0/24
 
 # 更大的范围
-dnscan -subnet 10.96.0.0/12    # 默认 Service CIDR
-dnscan -subnet 10.244.0.0/16   # Pod CIDR (Flannel 默认)
-dnscan -subnet 10.42.0.0/16    # Pod CIDR (K3s 默认)
+k8spider scan -subnet 10.96.0.0/12    # 默认 Service CIDR
+k8spider scan -subnet 10.244.0.0/16   # Pod CIDR (Flannel 默认)
+k8spider scan -subnet 10.42.0.0/16    # Pod CIDR (K3s 默认)
 ```
 
-### 使用 K8Spider（增强版）
-
-```bash
-# PTR 反查 + SRV 记录 + 多线程
-k8spider scan -subnet 10.100.0.0/16
-```
+> **备选**: 部分 CTF 环境预装了 `dnscan`（用法: `dnscan -subnet <cidr>`），功能类似但不支持 SRV 记录枚举。优先用 K8Spider。
 
 ### 无工具时的手动方法
 
@@ -97,24 +92,24 @@ nslookup any.any.svc.cluster.local
 
 ## Phase 3: 服务利用
 
-发现服务后的后续操作：
+发现服务后，按攻击价值优先级排序：
+
+1. **直接 flag/数据服务**（名称含 flag、secret、internal）→ 立即 curl 访问
+2. **集群管控面**（API Server 6443、etcd 2379、kubelet 10250）→ 未授权访问 = 集群接管
+3. **策略/Webhook 服务**（kyverno-svc、gatekeeper）→ 可提取注入的 Secret
+4. **监控/运维**（prometheus 9090、grafana 3000、dashboard 8443）→ 信息泄露 + 凭据
+5. **业务服务**（其他自定义服务）→ 根据名称和端口判断
 
 ```bash
-# 直接访问服务
+# 访问发现的服务
 curl <service>.<namespace>.svc.cluster.local
-
-# 带端口访问（从 SRV 记录获取）
 curl <service>.<namespace>.svc.cluster.local:<port>
 
-# 常见高价值目标
-# - kube-apiserver (6443)
-# - etcd (2379)
-# - kubelet (10250)
-# - dashboard (443/8443)
-# - prometheus/grafana (9090/3000)
-# - istio/envoy (15000/15001)
-# - kyverno (443)
-# - argocd (443/80)
+# 对高价值目标尝试多个路径
+curl -s http://<svc>:<port>/
+curl -s http://<svc>:<port>/flag
+curl -s http://<svc>:<port>/api/v1
+curl -sk https://<svc>:<port>/
 ```
 
 ---
@@ -126,12 +121,12 @@ curl <service>.<namespace>.svc.cluster.local:<port>
 - Kyverno/OPA Webhook → `Skill(skill="k8s-webhook-abuse")`
 - NFS/EFS 存储 → `Skill(skill="k8s-storage-exploit")`
 - API Server/Kubelet → `Skill(skill="k8s-container-escape")`
+- K8Spider 工具详细用法 → `Skill(skill="k8spider")`
 
 ## 工具速查
 
 | 工具 | 用途 | 安装 |
 |------|------|------|
-| dnscan | K8s DNS 批量扫描 | CTF 预装 / Go 编译 |
-| K8Spider | 增强版 dnscan (PTR+SRV+AXFR+多线程) | `go install github.com/Esonhugh/k8spider@latest` |
+| K8Spider | K8s DNS 批量扫描（PTR+SRV+AXFR+多线程） | `go install github.com/Esonhugh/k8spider@latest` |
 | nslookup/dig | 手动 DNS 查询 | 系统自带 |
 | CDK | 容器渗透工具集（含服务发现） | f8x 安装 |

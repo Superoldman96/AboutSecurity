@@ -105,7 +105,7 @@ ls /var/run/secrets/istio/ 2>/dev/null
 curl -s localhost:15000/server_info 2>/dev/null | head -5
 
 # 2. 发现目标服务
-dnscan -subnet <service-cidr>
+k8spider scan -subnet <service-cidr>
 
 # 3. 直接访问（测试是否被 AuthorizationPolicy 阻止）
 curl -v <target-service>
