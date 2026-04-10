@@ -103,6 +103,8 @@
 
 ### 3.1 密码规则推导
 
+> **💡 工具提示**：如果目标是中国人且有个人信息（姓名/生日/电话/身份证），用 `ccupp` 自动生成社工字典比手工写脚本更快更全：`ccupp interactive` 交互式输入 → `ccupp generate -o passwords.txt`
+
 ```python
 # 基于收集到的信息生成密码字典
 import itertools

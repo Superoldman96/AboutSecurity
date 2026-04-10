@@ -40,7 +40,7 @@ CTF 侦察和真实渗透的侦察本质不同：
 ### 信息泄露路径
 ```
 /robots.txt          — 最常见的提示位置，Disallow 的路径往往是关键
-/.git/HEAD           — Git 源码泄露（存在则用 git-dumper 下载整个仓库）
+/.git/HEAD           — Git 源码泄露（存在则用 githacker --brute 恢复完整仓库，含 stash/所有分支）
 /.svn/entries        — SVN 泄露
 /.DS_Store           — macOS 目录文件泄露
 /crossdomain.xml     — Flash 跨域策略（可能暴露内部域名）
