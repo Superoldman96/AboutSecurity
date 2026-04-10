@@ -69,3 +69,4 @@ python scripts/bench-skill.py --skill sql-injection-methodology
 - https://github.com/ljagiello/ctf-skills
 - https://github.com/JDArmy/Evasion-SubAgents
 - https://github.com/teamssix/twiki
+- https://github.com/yaklang/hack-skills
