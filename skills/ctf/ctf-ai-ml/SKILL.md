@@ -1,31 +1,9 @@
 ---
 name: ctf-ai-ml
 description: "CTF AI/ML 攻击技术。当挑战涉及 AI 模型攻击、对抗样本生成、模型提取、Prompt 注入/越狱、LoRA 权重操纵、LLM Token 走私、成员推理攻击、训练数据投毒、神经网络分析时使用。覆盖 FGSM/PGD/C&W 对抗攻击、模型反演、模型权重扰动还原、LLM 工具链劫持、上下文窗口操纵等 AI 安全全链路攻防技术"
-tags:
-  - ai
-  - ml
-  - machine learning
-  - adversarial
-  - FGSM
-  - PGD
-  - model extraction
-  - model inversion
-  - prompt injection
-  - jailbreak
-  - token smuggling
-  - LoRA
-  - safetensors
-  - pytorch
-  - transformers
-  - membership inference
-  - data poisoning
-  - backdoor detection
-  - neural network
-  - LLM
-  - GPT
-  - classifier
-  - evasion
-  - adversarial patch
+metadata:
+  tags: "ai,ml,machine learning,adversarial,FGSM,PGD,model extraction,model inversion,prompt injection,jailbreak,token smuggling,LoRA,safetensors,pytorch,transformers,membership inference,data poisoning,backdoor detection,neural network,LLM,GPT,classifier,evasion,adversarial patch"
+  category: "ctf"
 ---
 
 # CTF AI/ML Attack Techniques
