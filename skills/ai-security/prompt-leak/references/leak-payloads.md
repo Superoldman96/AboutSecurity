@@ -1,7 +1,4 @@
 # Prompt 泄露 — 各 Phase 详细 Payload
-
-> 返回主文档: [SKILL.md](../SKILL.md)
-
 ## Phase 1: 直接请求
 
 ### 1.1 简单直接

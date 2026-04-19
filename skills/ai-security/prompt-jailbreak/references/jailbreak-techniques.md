@@ -1,7 +1,4 @@
 # 越狱技术详解
-
-> 返回主文档: [SKILL.md](../SKILL.md)
-
 ## Phase 1: 角色扮演越狱
 
 ### 1.1 DAN (Do Anything Now)

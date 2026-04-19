@@ -1,7 +1,4 @@
 # sqlmap 高级用法详细命令
-
-> 返回主文档: [SKILL.md](../SKILL.md)
-
 ## Phase 5: 高级利用
 
 ### OS Shell（获取系统命令执行）

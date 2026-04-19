@@ -1,7 +1,4 @@
 # Prompt 注入 — 详细 Payload 与代码
-
-> 返回主文档: [SKILL.md](../SKILL.md)
-
 ## Phase 1: 间接注入 — 网页/文档载体
 
 ### 1.1 网页隐藏指令

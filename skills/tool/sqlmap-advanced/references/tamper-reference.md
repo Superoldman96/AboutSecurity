@@ -1,7 +1,4 @@
 # tamper 脚本速查表
-
-> 返回主文档: [SKILL.md](../SKILL.md)
-
 ## tamper 选择速查
 
 | 目标数据库 | 推荐 tamper 组合 |
