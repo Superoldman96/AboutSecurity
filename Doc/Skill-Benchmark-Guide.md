@@ -408,7 +408,7 @@ python .github/skills/skill-creator/eval-viewer/generate_review.py \
 ## FAQ
 
 **Q: 两套测试我都要跑吗？**
-A: 看情况。如果你的 Skill 是给 Kitsune 用的（通过 `list_skills`/`read_skill` 手动触发），触发率测试不太重要，重点跑内容质量。如果是给 Claude Code 用的（自动触发），两个都跑。
+给 Claude Code 用的（自动触发），两个都跑。
 
 **Q: 跑一次 bench-skill 要花多少钱？**
 A: 取决于 eval 数量和 runs。每次 claude -p 调用大约 3000-5000 tokens。4 evals × 3 runs × 2 configs = 24 次调用 ≈ 72K-120K tokens。用 Sonnet 大约 $0.2-0.4。
