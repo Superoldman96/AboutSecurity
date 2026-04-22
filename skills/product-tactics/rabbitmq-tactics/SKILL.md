@@ -1,12 +1,12 @@
 ---
-name: rabbitmq-exploit
+name: rabbitmq-tactics
 description: |
   RabbitMQ 后渗透方法论：Erlang Cookie RCE、后门用户创建、队列消息窃取、Spring AMQP反序列化、MQTT/STOMP协议层攻击。
   当用户提到RabbitMQ漏洞、RabbitMQ利用、RabbitMQ默认密码、RabbitMQ未授权、RabbitMQ提权、Spring AMQP反序列化、Erlang Cookie、消息队列安全、AMQP安全、RabbitMQ检测时，必须使用此技能。
   也适用于用户提到消息中间件漏洞、RabbitMQ Management、RabbitMQ端口渗透、AMQP 0-9-1协议攻击、epmd枚举等场景。
 metadata:
   tags: "RabbitMQ,消息队列,Erlang Cookie,默认凭据,AMQP,Spring AMQP,反序列化,RCE,MQTT,STOMP,后渗透,凭据提取"
-  category: "exploit"
+  category: "product-tactics"
   mitre_attack: "T1190,T1059,T1078"
 ---
 

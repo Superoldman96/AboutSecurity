@@ -12,11 +12,11 @@
 - `ctf/` — CTF竞赛（Web解题、逆向、PWN、密码学、取证、AI/ML）
 - `dfir/` — 取证对抗（内存取证与反取证、磁盘取证与反取证、日志逃逸）
 - `evasion/` — 免杀对抗（C2框架、Shellcode生成、安全研究）
-- `exploit/` — 漏洞利用（60+skills，按子分类组织）
+- `exploit/` — 漏洞利用（按子分类组织）
   - `web-method/` — Web 通用方法论（注入、XSS、SSRF、SSTI、文件上传、反序列化、WAF绕过…）
-  - `product-vuln/` — 特定产品漏洞后渗透方法论（Nacos、Jenkins、Grafana、GeoServer、中间件…）
   - `advanced/` — 高级利用（HTTP走私、竞态条件、供应链攻击、OT/ICS、加密攻击）
   - `auth/` — 认证授权（JWT、OAuth/SSO、IDOR、CORS、CSRF、Cookie分析）
+- `product-tactics/` — 特定产品后渗透技战术（ArgoCD、Harbor、数据库、中间件、Portainer、RabbitMQ）
 - `general/` — 综合（报告生成、供应链审计、移动后端API）
 - `lateral/` — 横向移动（AD域攻击、NTLM中继、数据库横向、Kerberoasting、ACL滥用）
 - `malware/` — 恶意软件（样本分析方法论、C2 Beacon配置提取、沙箱逃逸实现）
@@ -54,7 +54,7 @@
 
 > **Tools/ vs skills/tool/ 的区别**：`Tools/` 下的 YAML 是面向**程序化工具编排框架**的结构化接口定义（参数类型、命令模板、输出解析器），适合自动化引擎调用；`skills/tool/` 下的 SKILL.md 是面向 **LLM Agent** 的自然语言方法论（何时用、怎么选参数、结果怎么判断）。如果你只使用 Claude Code 等 LLM Agent，关注 `skills/tool/` 即可。
 
-> **skills/exploit/product-vuln/ vs Vuln/ 的区别**：两者针对同一产品但定位不同。`product-vuln/` 下的 Skill 是**方法论层**——攻击决策树、多 CVE 优先级编排、后利用技巧（提权/持久化/凭据提取）；`Vuln/` 下的条目是**数据层**——每条漏洞的影响版本、PoC 代码、具体利用步骤。简单来说：**Skill 告诉你"怎么打"，Vuln 告诉你"用什么打"**。AI 会先读 Skill 了解整体攻击面，再调 Vuln 拿具体 PoC 去执行。
+> **product-tactics/ vs Vuln/ 的区别**：两者针对同一产品但定位不同。`product-tactics/` 下的 Skill 是**后渗透层**——拿到权限后的提权、持久化、凭据提取、横向移动、数据窃取；`Vuln/` 下的条目是**漏洞数据层**——每条漏洞的影响版本、PoC 代码、具体利用步骤。简单来说：**Skill 告诉你"进去之后怎么搞"，Vuln 告诉你"怎么进去"**。
 
 ## 快速开始
 

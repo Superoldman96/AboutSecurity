@@ -1,12 +1,12 @@
 ---
-name: argocd-exploit
+name: argocd-tactics
 description: |
   ArgoCD 后渗透方法论：Redis缓存投毒集群接管、SSO认证绕过、未授权API枚举、恶意Application部署、Webhook SSRF、默认凭据利用。
   当用户提到ArgoCD漏洞、ArgoCD利用、ArgoCD RCE、ArgoCD Redis、ArgoCD未授权、ArgoCD检测、GitOps安全时，必须使用此技能。
   也适用于用户提到K8s持续交付、Kubernetes GitOps、ArgoCD集群接管、ArgoCD缓存投毒等场景。
 metadata:
   tags: "ArgoCD,Kubernetes,GitOps,Redis,缓存投毒,SSO绕过,SSRF,K8s集群接管,持续交付,未授权API"
-  category: "exploit"
+  category: "product-tactics"
   mitre_attack: "T1190,T1078"
 ---
 

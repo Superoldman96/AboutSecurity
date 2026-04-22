@@ -1,12 +1,12 @@
 ---
-name: portainer-exploit
+name: portainer-tactics
 description: |
   Portainer 后渗透方法论：默认凭据认证突破、用户枚举时间差攻击、Docker API特权容器逃逸RCE、宿主机文件系统挂载。
   当用户提到Portainer漏洞、Portainer RCE、Portainer Docker逃逸、Portainer认证绕过、Portainer利用、Portainer检测时，必须使用此技能。
   也适用于用户提到Docker管理面板漏洞、容器管理平台利用、Portainer CE/BE渗透等场景。
 metadata:
   tags: "Portainer,Docker,容器管理,默认凭据,用户枚举,SSRF,特权容器逃逸,RCE,Kubernetes"
-  category: "exploit"
+  category: "product-tactics"
   mitre_attack: "T1190,T1059,T1078"
 ---
 

@@ -1,12 +1,12 @@
 ---
-name: harbor-exploit
+name: harbor-tactics
 description: |
   Harbor 后渗透方法论：默认凭据接管、未授权API镜像泄露、普通用户提权至管理员、Robot Account持久化、镜像篡改供应链攻击。
   当用户提到Harbor漏洞、Harbor镜像仓库、Harbor未授权、Harbor默认密码、Harbor提权、Harbor利用、Harbor检测时，必须使用此技能。
   也适用于用户提到容器镜像仓库漏洞、Docker Registry安全、镜像供应链攻击、Harbor CE/EE渗透等场景。
 metadata:
   tags: "Harbor,容器镜像仓库,默认凭据,未授权访问,提权,Docker Registry,供应链攻击,镜像篡改,持久化"
-  category: "exploit"
+  category: "product-tactics"
   mitre_attack: "T1190,T1078"
 ---
 

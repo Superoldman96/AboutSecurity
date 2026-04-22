@@ -12,11 +12,11 @@ Penetration testing knowledge base with security methodologies in AI Agent-execu
 - `ctf/` — CTF competitions (Web challenges, reversing, PWN, cryptography, forensics, AI/ML)
 - `dfir/` — Digital forensics & incident response (memory forensics & anti-forensics, disk forensics, log evasion)
 - `evasion/` — Evasion techniques (C2 frameworks, shellcode generation, security research)
-- `exploit/` — Exploitation (60+ skills, organized by subcategory)
+- `exploit/` — Exploitation (organized by subcategory)
   - `web-method/` — Web methodology (injection, XSS, SSRF, SSTI, file upload, deserialization, WAF bypass...)
-  - `product-vuln/` — Product-specific vulnerability methodology (Nacos, Jenkins, Grafana, GeoServer, middleware...)
   - `advanced/` — Advanced exploitation (HTTP smuggling, race conditions, supply chain attacks, OT/ICS, crypto attacks)
   - `auth/` — Authentication & authorization (JWT, OAuth/SSO, IDOR, CORS, CSRF, cookie analysis)
+- `product-tactics/` — Product-specific post-exploitation tactics (ArgoCD, Harbor, databases, middleware, Portainer, RabbitMQ)
 - `general/` — General (report generation, supply chain auditing, mobile backend API)
 - `lateral/` — Lateral movement (AD domain attacks, NTLM relay, database pivoting, Kerberoasting, ACL abuse)
 - `malware/` — Malware (sample analysis methodology, C2 beacon config extraction, sandbox evasion)
@@ -54,7 +54,7 @@ Penetration testing knowledge base with security methodologies in AI Agent-execu
 
 > **Tools/ vs skills/tool/**: YAML files under `Tools/` are structured interface definitions for **programmatic tool orchestration frameworks** (parameter types, command templates, output parsers), suitable for automation engines. `SKILL.md` files under `skills/tool/` are natural language methodologies for **LLM Agents** (when to use, how to choose parameters, how to interpret results). If you only use LLM Agents like Claude Code, focus on `skills/tool/`.
 
-> **skills/exploit/product-vuln/ vs Vuln/**: Both target the same products but serve different purposes. Skills under `product-vuln/` are the **methodology layer** — attack decision trees, multi-CVE priority orchestration, post-exploitation techniques (privilege escalation, persistence, credential extraction). Entries under `Vuln/` are the **data layer** — affected versions, PoC code, specific exploitation steps per CVE. In short: **Skills tell you "how to attack", Vuln tells you "what to attack with"**. The AI reads a Skill first to understand the overall attack surface, then queries Vuln for specific PoCs to execute.
+> **product-tactics/ vs Vuln/**: Both target specific products but serve different purposes. Skills under `product-tactics/` are the **post-exploitation layer** — what to do after gaining access (privilege escalation, persistence, credential extraction, lateral movement, data exfiltration). Entries under `Vuln/` are the **vulnerability data layer** — affected versions, PoC code, specific exploitation steps per CVE. In short: **Skills tell you "what to do after you're in", Vuln tells you "how to get in"**.
 
 ## Quick Start
 
