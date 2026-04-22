@@ -448,7 +448,16 @@ metadata:
 - **Vuln（本节）**= 数据层，回答"用什么打"——影响版本、PoC 代码、具体利用步骤
 - **Skill（`skills/exploit/product-vuln/`）**= 方法论层，回答"怎么打"——攻击决策树、多 CVE 编排、后利用技巧
 
-如果你要写的内容是"面对某产品，整体攻击思路和后利用方法"，应该写 Skill；如果是"某个 CVE 的具体 PoC 和利用步骤"，应该写 Vuln。
+**如何选择写 Skill 还是 Vuln：**
+
+| 你要写的内容 | 应该放在 | 示例 |
+|-------------|---------|------|
+| 某个 CVE 的具体 PoC 和利用步骤 | `Vuln/<category>/<product>/` | CVE-2024-23897 Jenkins 任意文件读取的 PoC |
+| 面对某产品的整体攻击决策树、多 CVE 编排 | `skills/exploit/product-vuln/` | 面对 Jenkins，先打哪个端口、版本判断、利用优先级 |
+| 获取权限后的后利用（提权、凭据提取、持久化、横向移动） | `skills/exploit/product-vuln/` | Jenkins 拿到 admin 后如何通过 Groovy 提取所有存储的凭据、写 SSH key 持久化 |
+| 产品特有的检测与指纹识别方法 | `skills/exploit/product-vuln/` | Jenkins 版本探测脚本、多 CVE 一键检测工具 |
+
+简单判断：**如果内容围绕一个 CVE 编号展开，写 Vuln；如果内容围绕一个产品展开（尤其涉及后利用），写 Skill。**
 
 ## 2 目录结构
 
