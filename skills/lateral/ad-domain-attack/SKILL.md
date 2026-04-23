@@ -2,7 +2,7 @@
 name: ad-domain-attack
 description: "Active Directory 域环境攻击全链路。当目标主机在域环境中（systeminfo 显示 Domain 非 WORKGROUP）、发现 88/389/636 端口、或获取到域用户凭据时使用。覆盖域信息收集、用户枚举、Kerberoasting、AS-REP Roasting、委派攻击、ACL 滥用、DCSync、Golden/Silver Ticket"
 metadata:
-  tags: "ad,domain,kerberos,kerberoasting,asrep,delegation,dcsync,golden ticket,acl,域,域控,横向移动,ntlm,bloodhound"
+  tags: "ad,domain,kerberos,kerberoasting,asrep,delegation,dcsync,golden ticket,acl,域,域控,横向移动,ntlm,bloodhound,zerologon,CVE-2020-1472,netlogon"
   category: "lateral"
   mitre_attack: "T1558.003,T1558.004,T1003.006,T1550.002,T1550.003,T1098,T1484"
 ---
@@ -17,6 +17,7 @@ metadata:
 - 需要认证后深度枚举方法 → [references/authenticated-enum.md](references/authenticated-enum.md)
 - 需要密码喷洒、AS-REP Roasting、Kerberoasting 详细命令 → [references/credential-attacks.md](references/credential-attacks.md)
 - 需要委派攻击(RBCD)、ACL 滥用、DCSync、持久化 → [references/domain-escalation.md](references/domain-escalation.md)
+- → [references/zerologon-attack.md](references/zerologon-attack.md) — CVE-2020-1472 ZeroLogon 攻击与恢复
 
 ---
 
