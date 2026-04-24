@@ -1,5 +1,7 @@
 [中文文档](README.zh-CN.md) | English
 
+![AboutSecurity — The world's largest structured pentest knowledge base](assets/img/banner.png)
+
 # AboutSecurity
 
 Penetration testing knowledge base with security methodologies in AI Agent-executable format.

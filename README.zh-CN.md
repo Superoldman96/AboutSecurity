@@ -1,12 +1,14 @@
 [English](README.md) | 中文文档
 
+![AboutSecurity — The world's largest structured pentest knowledge base](assets/img/banner.png)
+
 # AboutSecurity
 
 渗透测试知识库，以 AI Agent 可执行的格式沉淀安全方法论。
 
 ## 核心模块
 
-**Skills/** — 184 个技能方法论，覆盖侦察到后渗透全链路
+**Skills/** — 180+ 技能方法论，覆盖侦察到后渗透全链路
 
 - `ai-security/` — AI 安全（Prompt 注入、模型越狱、Prompt 泄露、Agent 攻击链）
 - `cloud/` — 云环境（Docker逃逸、K8s攻击链、AWS IAM、阿里云、腾讯云、Serverless）
