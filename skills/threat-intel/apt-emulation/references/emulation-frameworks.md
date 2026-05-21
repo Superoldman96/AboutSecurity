@@ -539,6 +539,6 @@ ATT&CK Navigator 配置:
 
 ## 关联参考
 
-- **APT 模拟与情报驱动红队** → `../SKILL.md`
-- **检测规则分析与绕过** → `/skills/threat-intel/threat-hunting-evasion/references/detection-rules-bypass.md`
-- **红队评估** → `/skills/general/red-team-assessment/SKILL.md`
+- **APT 模拟与情报驱动红队** → 本 skill 的 `SKILL.md`
+- **检测规则分析与绕过** → 需要时使用 `threat-hunting-evasion` skill
+- **红队评估** → 需要时使用 `red-team-assessment` skill

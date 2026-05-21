@@ -11,6 +11,10 @@ metadata:
 
 本技能是渗透测试的标准第一步，目标是从域名/IP 出发，尽可能多地发现资产和漏洞。
 
+## 深入参考
+
+- Web 目录、历史端点、隐藏参数、Next.js/SPA 路由发现 → [references/web-discovery-methods.md](references/web-discovery-methods.md)
+
 ## Phase 0: 范围确认
 
 确认测试目标的范围，和任务描述，尽量不要超出目标范围

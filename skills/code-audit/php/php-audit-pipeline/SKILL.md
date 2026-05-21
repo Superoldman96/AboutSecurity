@@ -17,6 +17,7 @@ metadata:
 
 - 证据合约系统与评分公式 → [references/evidence-contract.md](references/evidence-contract.md)
 - PHP 危险函数分类速查 → [references/sink-reference.md](references/sink-reference.md)
+- Semgrep / SonarQube / Psalm / Snyk 等 SAST 工具链 → [references/sast-toolchain.md](references/sast-toolchain.md)
 
 ---
 
