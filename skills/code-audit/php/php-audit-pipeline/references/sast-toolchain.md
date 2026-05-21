@@ -96,21 +96,18 @@ composer require --dev vimeo/psalm
 
 ## 5. CodeQL
 
-CodeQL 适合需要跨文件、跨函数查询复杂数据流的项目。成本比 Semgrep 高，但对大型代码库和定制 query 更有价值。
+当前官方 CodeQL 支持语言列表不包含 PHP；不要把 Java/JavaScript 的 CodeQL 建库命令套用到 PHP 项目。PHP 项目的跨文件数据流审计优先使用 Semgrep/Opengrep 自定义规则、Psalm taint analysis、PHPStan 扩展或人工 Source→Sink 跟踪。
 
 ```bash
+# 先确认当前 CodeQL CLI 支持语言；若无 php，不要创建 PHP database
 codeql resolve languages
-codeql database create codeql-db --language=java --source-root .
-codeql database analyze codeql-db github/security-queries \
-  --format=sarif-latest --output=codeql-results.sarif --download
 ```
 
 常见流程：
-1. 确认语言和构建方式，编译型语言需要能成功构建。
-2. 创建 CodeQL database。
-3. 运行官方 security queries。
-4. 对关键业务 sink 编写或调整自定义 query。
-5. 将结果回填到人工审计证据链。
+1. 先确认工具是否支持 PHP，而不是照搬其他语言命令。
+2. 使用 Semgrep/Opengrep/Psalm 覆盖可自动化的数据流线索。
+3. 对关键业务 sink 编写或调整自定义规则。
+4. 将结果回填到人工审计证据链。
 
 ---
 
@@ -131,7 +128,7 @@ Docker 示例：
 docker run -it \
   -e "SNYK_TOKEN=TOKEN" \
   -v "${PWD}:/project" \
-  snyk/snyk:gradle test --org=my-org-name
+  snyk/snyk:composer test --org=my-org-name
 ```
 
 ---
