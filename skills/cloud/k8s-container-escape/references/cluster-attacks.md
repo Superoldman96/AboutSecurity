@@ -270,12 +270,12 @@ kubectl get pods --all-namespaces -o yaml | grep "iam.amazonaws.com/role"
 # 如果发现 → 创建带有目标角色注解的 Pod 即可获取 IAM 凭据
 ```
 
-### 8.5 EKS 节点 IAM → cluster-admin 提权
+### 8.5 EKS 节点 IAM → 受限 TokenRequest 滥用
 
-EKS 节点默认拥有 `system:node` 角色。如果能窃取节点 IAM 凭据，可以为节点上运行的高权限 SA 生成 Token：
+EKS 节点凭据会经由 AWS IAM Authenticator 映射为节点身份，但不能通过 `kubectl --as=system:node:<NODE_NAME>` 任意伪装；`--as` 需要额外的 impersonate 授权。节点身份通常还受 NodeAuthorizer / NodeRestriction 约束，只能围绕该节点上实际运行的 Pod 和其 ServiceAccount 尝试 TokenRequest。
 ```bash
-# 节点可以为其上运行的 Pod 的 SA 创建 Token
-kubectl --as=system:node:<NODE_NAME> create token -n kube-system <SA_NAME> \
+# 使用真实节点身份凭据访问 API 后，针对该节点上实际 Pod 的 SA 尝试创建绑定 Token
+kubectl create token -n kube-system <SA_NAME> \
   --bound-object-kind=Pod \
   --bound-object-name=<POD_NAME> \
   --bound-object-uid=<POD_UID>

